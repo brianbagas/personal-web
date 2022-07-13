@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://css.gg/instagram.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link href='https://css.gg/dark-mode.css' rel='stylesheet'>
+    <title>Tugas Akhir Web Dasar Dicoding</title>
+
+</head>
+<body class="body">
+    <header>
+        <nav class="header ">
+            <ul>
+                <li><b>Brian Bagas</b> </li>
+                
+                <li class="menu">     
+                <i class="gg-dark-mode" onclick="gantiTema()"></i>
+                </li>
+                <li ></li>
+                <li class="menu"><i class="fa fa-linkedin-square" ></i></li>
+                <li class="menu"><a href="https://github.com/brianbagas" style="color: white;"><i class="fa fa-github"></i></a></li>
+            </ul>
+            
+            </nav>
+    </header>
+    <main>
+        <article>
+            <div>
+                <div>
+                    <div class="left-content">
+                        <div class="aboutme">
+                            <h2>My Website</h2>
+                            <p>Halo, my name is Brian. 
+                            <br>
+                             I'm a  <b>Full Stack Developer</b>.  </p>
+                             <dialog id="favDialog">
+                                <form method="dialog">
+                                    <p>Name : Michael Brian Bagaskara
+                                        <br>
+                                        EDUCATION : Universitas Atma Jaya Yogyakarta (2019-Present)
+                                        <br>
+                                        ORGANIZATION : <br>
+                                         <b>Kelompok Studi Desain Grafis</b>  <br>
+
+                                        Secretary <br>
+                                        •	Responsible of attendance Kelompok Studi Desain Grafis Every week <br>
+                                        •	Make a schedule of activities for 2 semesters and a small class to make a course more effective <br>
+                                        
+                                        Member of Equipment Division in Workshop <br>
+                                        •	prepare workshop needs such as banners, rooms, and other tools <br>
+                                        <b>Kelompok Studi Pemrograman</b>
+                                         <br>
+                                        Mentor of C language <br>
+                                        •	Teaching members of basic programming using C language. <br>
+                                        
+                                        Mentor of C language in Programming in Contest <br>
+                                        •	improve the ability of members in C language which will be used to prepare for the competition. <br>
+                                        
+                                        
+                                    </p>
+                                    
+                                  <div>
+                                    <button value="cancel">Cancel</button>
+                                  </div>
+                                </form>
+                              </dialog>
+                              <p>
+                                <button id="updateDetails">Show More</button>
+                              </p>
+                              <output></output>
+                             
+                        </div>
+                     </div>
+                    <div class="right-content">
+                        <a href="https://www.pngwing.com/en/free-png-yeiuv">
+                             <img  src="./asset/pngwing.com.png" alt="gambar" class="gambar">
+                         </a>
+                     </div>
+                </div>
+                    
+                    <div class="skill" >
+                        <h1>SKILLS</h1>
+                            <div class="container">
+                                <div class="flex-item">
+                                    <p>HTML</p>
+                                    <i class="fa fa-html5" aria-hidden="true"></i>
+                                    <br>
+                                    <a href="https://en.wikipedia.org/wiki/HTML5">LEARN MORE</a>
+                                </div>
+                                <div class="flex-item">
+                                    <p>CSS</p>
+                                    <i class="fa fa-css3" aria-hidden="true"></i>
+                                    <br>
+                                    <a href="https://www.w3schools.com/css/css_intro.asp">LEARN MORE</a>
+                                </div>
+                                <div class="flex-item">
+                                    <p>JavaScript</p>
+                                    <i class="fa fa-code" aria-hidden="true"></i>
+                                    <br>
+                                    <a href="https://www.w3schools.com/whatis/whatis_js.asp">LEARN MORE</a>
+                                </div>
+                                <div class="flex-item">
+                                    <p>Laravel</p>
+                                    <i class="fa fa-code" aria-hidden="true"></i>
+                                    <br>
+                                    <a href="https://laravel.com/">LEARN MORE</a>
+                                </div>
+                                <div class="flex-item">
+                                    <p>Vue Js</p>
+                                    <i class="fa fa-code" aria-hidden="true"></i>
+                                    <br>
+                                    <a href="https://vuejs.org/guide/introduction.html">LEARN MORE</a>
+                                </div>
+                                <div class="flex-item">
+                                    <p>PHP</p>
+                                    <i class="fa fa-code" aria-hidden="true"></i>
+                                    <br>
+                                    <a href="https://www.php.net/manual/en/intro-whatis.php">LEARN MORE</a>
+                                </div>
+
+                            </div>
+                    </div>
+
+
+                </div>
+                
+
+           
+        </article>
+
+    </main>
+   
+  
+    <footer class="grey">
+        <ul>
+            <li>BrianBagas</li>
+        </ul>
+    </footer>
+
+    
+</body>
+<script src="javascript.js"></script>
+</html>
+
+<script>
+    const updateButton = document.getElementById('updateDetails');
+const favDialog = document.getElementById('favDialog');
+const outputBox = document.querySelector('output');
+const selectEl = favDialog.querySelector('select');
+
+// If a browser doesn't support the dialog, then hide the
+// dialog contents by default.
+if ( typeof favDialog.showModal !== 'function' ) {
+  favDialog.hidden = true;
+  /* a fallback script to allow this dialog/form to function
+     for legacy browsers that do not support <dialog>
+     could be provided here.
+  */
+}
+// "Update details" button opens the <dialog> modally
+updateButton.addEventListener('click', function onOpen() {
+  if (typeof favDialog.showModal === "function") {
+    favDialog.showModal();
+  } else {
+    outputBox.value = "Sorry, the <dialog> API is not supported by this browser.";
+  }
+});
+// "Favorite animal" input sets the value of the submit button
+// "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
+favDialog.addEventListener('close', function onClose() {
+
+});
+</script>
+
+
+
+
+
+
